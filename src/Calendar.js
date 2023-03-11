@@ -1036,6 +1036,7 @@ class Calendar extends React.Component {
             onView={this.handleViewChange}
             onNavigate={this.handleNavigate}
             localizer={localizer}
+            preToolbar={this.props.preToolbar}
           />
         )}
         <View

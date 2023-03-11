@@ -8,6 +8,7 @@ class Toolbar extends React.Component {
     let {
       localizer: { messages },
       label,
+      preToolbar
     } = this.props
 
     return (
@@ -15,15 +16,15 @@ class Toolbar extends React.Component {
         <span className="rbc-btn-group">
           <button
             type="button"
-            onClick={this.navigate.bind(null, navigate.TODAY)}
-          >
-            {messages.today}
-          </button>
-          <button
-            type="button"
             onClick={this.navigate.bind(null, navigate.PREVIOUS)}
           >
             {messages.previous}
+          </button>
+          <button
+            type="button"
+            onClick={this.navigate.bind(null, navigate.TODAY)}
+          >
+            {messages.today}
           </button>
           <button
             type="button"
@@ -34,6 +35,8 @@ class Toolbar extends React.Component {
         </span>
 
         <span className="rbc-toolbar-label">{label}</span>
+
+	{preToolbar && preToolbar()}
 
         <span className="rbc-btn-group">{this.viewNamesGroup(messages)}</span>
       </div>
